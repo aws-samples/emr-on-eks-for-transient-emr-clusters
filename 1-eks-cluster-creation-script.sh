@@ -5,12 +5,12 @@ apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 metadata:
   name: ${CLUSTER_NAME}
-  region: ${AWS_DEFAULT_REGION}
-  version: "1.20"
+  region: ${AWS_REGION}
+  version: "1.22"
   tags:
     karpenter.sh/discovery: ${CLUSTER_NAME}
 managedNodeGroups:
-  - instanceType: m5.large
+  - instanceType: m5.2xlarge
     amiFamily: AmazonLinux2
     name: ${CLUSTER_NAME}-ng
     desiredCapacity: 1
