@@ -1,0 +1,33 @@
+bash-3.2$ sh 11-karpenter-setup.sh
+
+Waiting for changeset to be created..
+
+No changes to deploy. Stack Karpenter-eks-emr-cluster is up to date
+2022-05-19 00:13:21 [ℹ]  eksctl version 0.96.0
+2022-05-19 00:13:21 [ℹ]  using region us-east-2
+2022-05-19 00:13:22 [ℹ]  adding identity "arn:aws:iam::145454557612:role/KarpenterNodeRole-eks-emr-cluster" to auth ConfigMap
+2022-05-19 00:13:22 [ℹ]  eksctl version 0.96.0
+2022-05-19 00:13:22 [ℹ]  using region us-east-2
+2022-05-19 00:13:23 [ℹ]  1 existing iamserviceaccount(s) (kube-system/aws-node) will be excluded
+2022-05-19 00:13:23 [ℹ]  1 iamserviceaccount (karpenter/karpenter) was included (based on the include/exclude rules)
+2022-05-19 00:13:23 [!]  serviceaccounts that exist in Kubernetes will be excluded, use --override-existing-serviceaccounts to override
+2022-05-19 00:13:23 [ℹ]  1 task: { create IAM role for serviceaccount "karpenter/karpenter" }
+2022-05-19 00:13:23 [ℹ]  building iamserviceaccount stack "eksctl-eks-emr-cluster-addon-iamserviceaccount-karpenter-karpenter"
+2022-05-19 00:13:24 [ℹ]  deploying stack "eksctl-eks-emr-cluster-addon-iamserviceaccount-karpenter-karpenter"
+2022-05-19 00:13:24 [ℹ]  waiting for CloudFormation stack "eksctl-eks-emr-cluster-addon-iamserviceaccount-karpenter-karpenter"
+2022-05-19 00:13:54 [ℹ]  waiting for CloudFormation stack "eksctl-eks-emr-cluster-addon-iamserviceaccount-karpenter-karpenter"
+Error: repository name (karpenter) already exists, please specify a different name
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "karpenter" chart repository
+...Successfully got an update from the "grafana" chart repository
+...Successfully got an update from the "prometheus-community" chart repository
+Update Complete. ⎈Happy Helming!⎈
+Release "karpenter" does not exist. Installing it now.
+NAME: karpenter
+LAST DEPLOYED: Thu May 19 00:14:02 2022
+NAMESPACE: karpenter
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+provisioner.karpenter.sh/default created
+bash-3.2$ 

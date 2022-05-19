@@ -1,0 +1,23 @@
+bash-3.2$ sh 8-pod-templates.sh
+make_bucket: eks-emr-cluster-pod-templates-145454557612-us-east-2
+upload: ./spark_driver_pod_template.yml to s3://eks-emr-cluster-pod-templates-145454557612-us-east-2/spark_driver_pod_template.yml
+upload: ./hp_spark_executor_pod_template.yml to s3://eks-emr-cluster-pod-templates-145454557612-us-east-2/hp_spark_executor_pod_template.yml
+upload: ./lp_spark_executor_pod_template.yml to s3://eks-emr-cluster-pod-templates-145454557612-us-east-2/lp_spark_executor_pod_template.yml
+s3://eks-emr-cluster-pod-templates-145454557612-us-east-2
+bash-3.2$ sh 9-monthly-batch-low-priority-job.sh
+make_bucket: eks-emr-cluster-demojobs-145454557612-us-east-2
+upload: ./low-priority-threadsleeper.py to s3://eks-emr-cluster-demojobs-145454557612-us-east-2/low-priority-threadsleeper.py
+{
+    "id": "0000000306q3ucpkv1a",
+    "name": "monthly-batch-low-priority-job",
+    "arn": "arn:aws:emr-containers:us-east-2:145454557612:/virtualclusters/9vxtlfojy63p806dmsptnx041/jobruns/0000000306q3ucpkv1a",
+    "virtualClusterId": "9vxtlfojy63p806dmsptnx041"
+}
+
+bash-3.2$ k get pods -n monthly-batch 
+NAME                                                     READY   STATUS    RESTARTS   AGE
+0000000306q3ucpkv1a--1-kq4n9                             3/3     Running   0          51s
+monthly-batch-low-priority-job-95583980da205567-exec-1   2/2     Running   0          5s
+monthly-batch-low-priority-job-95583980da205567-exec-2   2/2     Running   0          4s
+spark-0000000306q3ucpkv1a-driver                         2/2     Running   0          13s
+bash-3.2$ 

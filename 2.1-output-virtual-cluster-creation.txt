@@ -1,0 +1,58 @@
+bash-3.2$ 3sh 2-virtual-cluster-creation.sh 
+bash: 3sh: command not found
+bash-3.2$ sh 2-virtual-cluster-creation.sh 
+namespace/realtime-batch created
+namespace/intra-day-batch created
+namespace/nightly-batch created
+namespace/monthly-batch created
+namespace/adhoc-ml-batch created
+2022-05-18 18:24:24 [ℹ]  eksctl version 0.96.0
+2022-05-18 18:24:24 [ℹ]  using region us-east-2
+2022-05-18 18:24:25 [ℹ]  created "realtime-batch:Role.rbac.authorization.k8s.io/emr-containers"
+2022-05-18 18:24:25 [ℹ]  created "realtime-batch:RoleBinding.rbac.authorization.k8s.io/emr-containers"
+2022-05-18 18:24:25 [ℹ]  adding identity "arn:aws:iam::145454557612:role/AWSServiceRoleForAmazonEMRContainers" to auth ConfigMap
+2022-05-18 18:24:26 [ℹ]  eksctl version 0.96.0
+2022-05-18 18:24:26 [ℹ]  using region us-east-2
+2022-05-18 18:24:27 [ℹ]  created "intra-day-batch:Role.rbac.authorization.k8s.io/emr-containers"
+2022-05-18 18:24:27 [ℹ]  created "intra-day-batch:RoleBinding.rbac.authorization.k8s.io/emr-containers"
+2022-05-18 18:24:27 [ℹ]  eksctl version 0.96.0
+2022-05-18 18:24:27 [ℹ]  using region us-east-2
+2022-05-18 18:24:28 [ℹ]  created "nightly-batch:Role.rbac.authorization.k8s.io/emr-containers"
+2022-05-18 18:24:28 [ℹ]  created "nightly-batch:RoleBinding.rbac.authorization.k8s.io/emr-containers"
+2022-05-18 18:24:29 [ℹ]  eksctl version 0.96.0
+2022-05-18 18:24:29 [ℹ]  using region us-east-2
+2022-05-18 18:24:30 [ℹ]  created "monthly-batch:Role.rbac.authorization.k8s.io/emr-containers"
+2022-05-18 18:24:30 [ℹ]  created "monthly-batch:RoleBinding.rbac.authorization.k8s.io/emr-containers"
+2022-05-18 18:24:30 [ℹ]  eksctl version 0.96.0
+2022-05-18 18:24:30 [ℹ]  using region us-east-2
+2022-05-18 18:24:31 [ℹ]  created "adhoc-ml-batch:Role.rbac.authorization.k8s.io/emr-containers"
+2022-05-18 18:24:31 [ℹ]  created "adhoc-ml-batch:RoleBinding.rbac.authorization.k8s.io/emr-containers"
+2022-05-18 18:24:32 [ℹ]  eksctl version 0.96.0
+2022-05-18 18:24:32 [ℹ]  using region us-east-2
+2022-05-18 18:24:32 [ℹ]  IAM Open ID Connect provider is already associated with cluster "eks-emr-cluster" in "us-east-2"
+{
+    "id": "ahg18jv46xeqp3jbe83pj39m1",
+    "name": "realtime-batch-emr-cluster",
+    "arn": "arn:aws:emr-containers:us-east-2:145454557612:/virtualclusters/ahg18jv46xeqp3jbe83pj39m1"
+}
+{
+    "id": "he6m3giguzla1cn6njwo56xa9",
+    "name": "intra-day-batch-emr-cluster",
+    "arn": "arn:aws:emr-containers:us-east-2:145454557612:/virtualclusters/he6m3giguzla1cn6njwo56xa9"
+}
+{
+    "id": "ij7tfmiwvfweng97u66v2gip1",
+    "name": "nightly-batch-emr-cluster",
+    "arn": "arn:aws:emr-containers:us-east-2:145454557612:/virtualclusters/ij7tfmiwvfweng97u66v2gip1"
+}
+{
+    "id": "9vxtlfojy63p806dmsptnx041",
+    "name": "monthly-batch-emr-cluster",
+    "arn": "arn:aws:emr-containers:us-east-2:145454557612:/virtualclusters/9vxtlfojy63p806dmsptnx041"
+}
+{
+    "id": "drn19iit00hstc7bap8x9mg70",
+    "name": "adhoc-ml-batch-emr-cluster",
+    "arn": "arn:aws:emr-containers:us-east-2:145454557612:/virtualclusters/drn19iit00hstc7bap8x9mg70"
+}
+bash-3.2$ 

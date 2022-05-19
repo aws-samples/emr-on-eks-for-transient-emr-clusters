@@ -1,0 +1,7 @@
+bash-3.2$ sh 8-pod-templates.sh
+make_bucket: eks-emr-cluster-pod-templates-145454557612-us-east-2
+upload: ./spark_driver_pod_template.yml to s3://eks-emr-cluster-pod-templates-145454557612-us-east-2/spark_driver_pod_template.yml
+upload: ./hp_spark_executor_pod_template.yml to s3://eks-emr-cluster-pod-templates-145454557612-us-east-2/hp_spark_executor_pod_template.yml
+upload: ./lp_spark_executor_pod_template.yml to s3://eks-emr-cluster-pod-templates-145454557612-us-east-2/lp_spark_executor_pod_template.yml
+s3://eks-emr-cluster-pod-templates-145454557612-us-east-2
+bash-3.2$ 

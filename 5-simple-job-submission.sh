@@ -6,7 +6,7 @@ cat > emr-request-withlogging.json <<EOF
 {
     "name": "pi-4",
     "virtualClusterId": "${VIRTUAL_CLUSTER_ID}",
-    "executionRoleArn": "$(aws iam get-role --role-name nightly-batch-JobExecutionRole --query Role.Arn --output text)",
+    "executionRoleArn": "$(aws iam get-role --role-name monthly-batch-JobExecutionRole --query Role.Arn --output text)",
     "releaseLabel": "emr-6.3.0-latest",
     "jobDriver": {
         "sparkSubmitJobDriver": {

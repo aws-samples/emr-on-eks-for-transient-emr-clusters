@@ -1,0 +1,12 @@
+bash-3.2$ k get ns 
+NAME              STATUS   AGE
+adhoc-ml-batch    Active   10m
+default           Active   40m
+intra-day-batch   Active   10m
+kube-node-lease   Active   40m
+kube-public       Active   40m
+kube-system       Active   40m
+monthly-batch     Active   10m
+nightly-batch     Active   10m
+realtime-batch    Active   10m
+bash-3.2$ 

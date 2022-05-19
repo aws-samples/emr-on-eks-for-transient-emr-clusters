@@ -8,7 +8,7 @@ aws iam attach-role-policy \
   --role-name $ROLE_NAME \
   --policy-arn arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy
 
-#Installinh Helm
+#Installing Helm
 curl -sSL https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
 
 #Install cloudwatch agents

@@ -1,0 +1,18 @@
+bash-3.2$ sh 6-cloudwatch-container-insights.sh
+2022-05-18 19:41:09 [ℹ]  eksctl version 0.96.0
+2022-05-18 19:41:09 [ℹ]  using region us-east-2
+export ROLE_NAME=eksctl-eks-emr-cluster-nodegroup-NodeInstanceRole-YKU1WEYZE5IM
+Helm v3.9.0 is already latest
+namespace/amazon-cloudwatch unchanged
+serviceaccount/cloudwatch-agent unchanged
+clusterrole.rbac.authorization.k8s.io/cloudwatch-agent-role unchanged
+clusterrolebinding.rbac.authorization.k8s.io/cloudwatch-agent-role-binding unchanged
+configmap/cwagentconfig unchanged
+daemonset.apps/cloudwatch-agent unchanged
+configmap/cluster-info unchanged
+serviceaccount/fluentd unchanged
+clusterrole.rbac.authorization.k8s.io/fluentd-role unchanged
+clusterrolebinding.rbac.authorization.k8s.io/fluentd-role-binding unchanged
+configmap/fluentd-config unchanged
+daemonset.apps/fluentd-cloudwatch unchanged
+bash-3.2$ 

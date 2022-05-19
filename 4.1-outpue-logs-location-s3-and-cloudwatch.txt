@@ -1,0 +1,7 @@
+bash-3.2$ sh 4-logs-location-s3-and-cloudwatch.sh
+make_bucket: realtime-batch-logs-145454557612-us-east-2
+make_bucket: intra-day-batch-logs-145454557612-us-east-2
+make_bucket: nightly-batch-logs-145454557612-us-east-2
+make_bucket: monthly-batch-logs-145454557612-us-east-2
+make_bucket: adhoc-ml-batch-logs-145454557612-us-east-2
+bash-3.2$ 

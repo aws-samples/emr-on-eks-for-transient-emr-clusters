@@ -1,0 +1,9 @@
+bash-3.2$ sh 10-intra-day-high-priority-time-sensitive-job.sh 
+make_bucket failed: s3://eks-emr-cluster-demojobs-145454557612-us-east-2 An error occurred (BucketAlreadyOwnedByYou) when calling the CreateBucket operation: Your previous request to create the named bucket succeeded and you already own it.
+upload: ./high-priority-threadsleeper.py to s3://eks-emr-cluster-demojobs-145454557612-us-east-2/high-priority-threadsleeper.py
+{
+    "id": "0000000306q42h26f21",
+    "name": "intra-day-high-priority-time-sensitive-job",
+    "arn": "arn:aws:emr-containers:us-east-2:145454557612:/virtualclusters/he6m3giguzla1cn6njwo56xa9/jobruns/0000000306q42h26f21",
+    "virtualClusterId": "he6m3giguzla1cn6njwo56xa9"
+}

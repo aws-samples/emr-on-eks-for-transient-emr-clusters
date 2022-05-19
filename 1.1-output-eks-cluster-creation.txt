@@ -1,0 +1,71 @@
+bash-3.2$ sh 1-eks-cluster-creation-script.sh 
+2022-05-18 17:46:46 [ℹ]  eksctl version 0.96.0
+2022-05-18 17:46:46 [ℹ]  using region us-east-2
+2022-05-18 17:46:46 [ℹ]  setting availability zones to [us-east-2b us-east-2c us-east-2a]
+2022-05-18 17:46:46 [ℹ]  subnets for us-east-2b - public:192.168.0.0/19 private:192.168.96.0/19
+2022-05-18 17:46:46 [ℹ]  subnets for us-east-2c - public:192.168.32.0/19 private:192.168.128.0/19
+2022-05-18 17:46:46 [ℹ]  subnets for us-east-2a - public:192.168.64.0/19 private:192.168.160.0/19
+2022-05-18 17:46:46 [ℹ]  nodegroup "eks-emr-cluster-ng" will use "" [AmazonLinux2/1.22]
+2022-05-18 17:46:46 [ℹ]  using Kubernetes version 1.22
+2022-05-18 17:46:46 [ℹ]  creating EKS cluster "eks-emr-cluster" in "us-east-2" region with managed nodes
+2022-05-18 17:46:46 [ℹ]  1 nodegroup (eks-emr-cluster-ng) was included (based on the include/exclude rules)
+2022-05-18 17:46:46 [ℹ]  will create a CloudFormation stack for cluster itself and 0 nodegroup stack(s)
+2022-05-18 17:46:46 [ℹ]  will create a CloudFormation stack for cluster itself and 1 managed nodegroup stack(s)
+2022-05-18 17:46:46 [ℹ]  if you encounter any issues, check CloudFormation console or try 'eksctl utils describe-stacks --region=us-east-2 --cluster=eks-emr-cluster'
+2022-05-18 17:46:46 [ℹ]  Kubernetes API endpoint access will use default of {publicAccess=true, privateAccess=false} for cluster "eks-emr-cluster" in "us-east-2"
+2022-05-18 17:46:46 [ℹ]  CloudWatch logging will not be enabled for cluster "eks-emr-cluster" in "us-east-2"
+2022-05-18 17:46:46 [ℹ]  you can enable it with 'eksctl utils update-cluster-logging --enable-types={SPECIFY-YOUR-LOG-TYPES-HERE (e.g. all)} --region=us-east-2 --cluster=eks-emr-cluster'
+2022-05-18 17:46:46 [ℹ]  
+2 sequential tasks: { create cluster control plane "eks-emr-cluster", 
+    2 sequential sub-tasks: { 
+        4 sequential sub-tasks: { 
+            wait for control plane to become ready,
+            associate IAM OIDC provider,
+            2 sequential sub-tasks: { 
+                create IAM role for serviceaccount "kube-system/aws-node",
+                create serviceaccount "kube-system/aws-node",
+            },
+            restart daemonset "kube-system/aws-node",
+        },
+        create managed nodegroup "eks-emr-cluster-ng",
+    } 
+}
+2022-05-18 17:46:46 [ℹ]  building cluster stack "eksctl-eks-emr-cluster-cluster"
+2022-05-18 17:46:47 [ℹ]  deploying stack "eksctl-eks-emr-cluster-cluster"
+2022-05-18 17:47:17 [ℹ]  waiting for CloudFormation stack "eksctl-eks-emr-cluster-cluster"
+2022-05-18 17:47:48 [ℹ]  waiting for CloudFormation stack "eksctl-eks-emr-cluster-cluster"
+2022-05-18 17:48:48 [ℹ]  waiting for CloudFormation stack "eksctl-eks-emr-cluster-cluster"
+2022-05-18 17:49:48 [ℹ]  waiting for CloudFormation stack "eksctl-eks-emr-cluster-cluster"
+2022-05-18 17:50:49 [ℹ]  waiting for CloudFormation stack "eksctl-eks-emr-cluster-cluster"
+2022-05-18 17:51:49 [ℹ]  waiting for CloudFormation stack "eksctl-eks-emr-cluster-cluster"
+2022-05-18 17:52:49 [ℹ]  waiting for CloudFormation stack "eksctl-eks-emr-cluster-cluster"
+2022-05-18 17:53:50 [ℹ]  waiting for CloudFormation stack "eksctl-eks-emr-cluster-cluster"
+2022-05-18 17:54:50 [ℹ]  waiting for CloudFormation stack "eksctl-eks-emr-cluster-cluster"
+2022-05-18 17:55:50 [ℹ]  waiting for CloudFormation stack "eksctl-eks-emr-cluster-cluster"
+2022-05-18 17:56:50 [ℹ]  waiting for CloudFormation stack "eksctl-eks-emr-cluster-cluster"
+2022-05-18 17:57:51 [ℹ]  waiting for CloudFormation stack "eksctl-eks-emr-cluster-cluster"
+2022-05-18 17:59:54 [ℹ]  building iamserviceaccount stack "eksctl-eks-emr-cluster-addon-iamserviceaccount-kube-system-aws-node"
+2022-05-18 17:59:54 [ℹ]  deploying stack "eksctl-eks-emr-cluster-addon-iamserviceaccount-kube-system-aws-node"
+2022-05-18 17:59:54 [ℹ]  waiting for CloudFormation stack "eksctl-eks-emr-cluster-addon-iamserviceaccount-kube-system-aws-node"
+2022-05-18 18:00:25 [ℹ]  waiting for CloudFormation stack "eksctl-eks-emr-cluster-addon-iamserviceaccount-kube-system-aws-node"
+2022-05-18 18:00:25 [ℹ]  serviceaccount "kube-system/aws-node" already exists
+2022-05-18 18:00:25 [ℹ]  updated serviceaccount "kube-system/aws-node"
+2022-05-18 18:00:25 [ℹ]  daemonset "kube-system/aws-node" restarted
+2022-05-18 18:00:26 [ℹ]  building managed nodegroup stack "eksctl-eks-emr-cluster-nodegroup-eks-emr-cluster-ng"
+2022-05-18 18:00:26 [ℹ]  deploying stack "eksctl-eks-emr-cluster-nodegroup-eks-emr-cluster-ng"
+2022-05-18 18:00:26 [ℹ]  waiting for CloudFormation stack "eksctl-eks-emr-cluster-nodegroup-eks-emr-cluster-ng"
+2022-05-18 18:00:57 [ℹ]  waiting for CloudFormation stack "eksctl-eks-emr-cluster-nodegroup-eks-emr-cluster-ng"
+2022-05-18 18:01:30 [ℹ]  waiting for CloudFormation stack "eksctl-eks-emr-cluster-nodegroup-eks-emr-cluster-ng"
+2022-05-18 18:02:01 [ℹ]  waiting for CloudFormation stack "eksctl-eks-emr-cluster-nodegroup-eks-emr-cluster-ng"
+2022-05-18 18:03:22 [ℹ]  waiting for CloudFormation stack "eksctl-eks-emr-cluster-nodegroup-eks-emr-cluster-ng"
+2022-05-18 18:03:22 [ℹ]  waiting for the control plane availability...
+2022-05-18 18:03:23 [✔]  saved kubeconfig as "/Users/petajeeb/.kube/config"
+2022-05-18 18:03:23 [ℹ]  no tasks
+2022-05-18 18:03:23 [✔]  all EKS cluster resources for "eks-emr-cluster" have been created
+2022-05-18 18:03:23 [ℹ]  nodegroup "eks-emr-cluster-ng" has 1 node(s)
+2022-05-18 18:03:23 [ℹ]  node "ip-192-168-47-18.us-east-2.compute.internal" is ready
+2022-05-18 18:03:23 [ℹ]  waiting for at least 1 node(s) to become ready in "eks-emr-cluster-ng"
+2022-05-18 18:03:23 [ℹ]  nodegroup "eks-emr-cluster-ng" has 1 node(s)
+2022-05-18 18:03:23 [ℹ]  node "ip-192-168-47-18.us-east-2.compute.internal" is ready
+2022-05-18 18:03:24 [ℹ]  kubectl command should work with "/Users/petajeeb/.kube/config", try 'kubectl get nodes'
+2022-05-18 18:03:24 [✔]  EKS cluster "eks-emr-cluster" in "us-east-2" region is ready

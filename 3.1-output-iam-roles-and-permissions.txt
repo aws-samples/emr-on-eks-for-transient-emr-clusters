@@ -1,0 +1,112 @@
+bash-3.2$ sh 3-iam-roles-and-permissions
+{
+    "Role": {
+        "Path": "/",
+        "RoleName": "realtime-batch-JobExecutionRole",
+        "RoleId": "AROASDXOENGWG7VKDLHOO",
+        "Arn": "arn:aws:iam::145454557612:role/realtime-batch-JobExecutionRole",
+        "CreateDate": "2022-05-18T22:41:11+00:00",
+        "AssumeRolePolicyDocument": {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Principal": {
+                        "Service": "elasticmapreduce.amazonaws.com"
+                    },
+                    "Action": "sts:AssumeRole"
+                }
+            ]
+        }
+    }
+}
+{
+    "Role": {
+        "Path": "/",
+        "RoleName": "intra-day-batch-JobExecutionRole",
+        "RoleId": "AROASDXOENGWFG5LGLVKX",
+        "Arn": "arn:aws:iam::145454557612:role/intra-day-batch-JobExecutionRole",
+        "CreateDate": "2022-05-18T22:41:12+00:00",
+        "AssumeRolePolicyDocument": {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Principal": {
+                        "Service": "elasticmapreduce.amazonaws.com"
+                    },
+                    "Action": "sts:AssumeRole"
+                }
+            ]
+        }
+    }
+}
+{
+    "Role": {
+        "Path": "/",
+        "RoleName": "nightly-batch-JobExecutionRole",
+        "RoleId": "AROASDXOENGWDKKG5OKZD",
+        "Arn": "arn:aws:iam::145454557612:role/nightly-batch-JobExecutionRole",
+        "CreateDate": "2022-05-18T22:41:13+00:00",
+        "AssumeRolePolicyDocument": {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Principal": {
+                        "Service": "elasticmapreduce.amazonaws.com"
+                    },
+                    "Action": "sts:AssumeRole"
+                }
+            ]
+        }
+    }
+}
+{
+    "Role": {
+        "Path": "/",
+        "RoleName": "monthly-batch-JobExecutionRole",
+        "RoleId": "AROASDXOENGWKGQ6ZPIET",
+        "Arn": "arn:aws:iam::145454557612:role/monthly-batch-JobExecutionRole",
+        "CreateDate": "2022-05-18T22:41:15+00:00",
+        "AssumeRolePolicyDocument": {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Principal": {
+                        "Service": "elasticmapreduce.amazonaws.com"
+                    },
+                    "Action": "sts:AssumeRole"
+                }
+            ]
+        }
+    }
+}
+{
+    "Role": {
+        "Path": "/",
+        "RoleName": "adhoc-ml-batch-JobExecutionRole",
+        "RoleId": "AROASDXOENGWIPPQQBXYG",
+        "Arn": "arn:aws:iam::145454557612:role/adhoc-ml-batch-JobExecutionRole",
+        "CreateDate": "2022-05-18T22:41:16+00:00",
+        "AssumeRolePolicyDocument": {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Principal": {
+                        "Service": "elasticmapreduce.amazonaws.com"
+                    },
+                    "Action": "sts:AssumeRole"
+                }
+            ]
+        }
+    }
+}
+Successfully updated trust policy of role realtime-batch-JobExecutionRole
+Successfully updated trust policy of role intra-day-batch-JobExecutionRole
+Successfully updated trust policy of role nightly-batch-JobExecutionRole
+Successfully updated trust policy of role monthly-batch-JobExecutionRole
+Successfully updated trust policy of role adhoc-ml-batch-JobExecutionRole
+bash-3.2$ 
