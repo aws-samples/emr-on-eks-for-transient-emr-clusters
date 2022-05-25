@@ -1,7 +1,4 @@
 
-
-
-export MY_EKSCONSOLE_ROLE=testAcc2Admin
 eksctl delete iamidentitymapping \
     --cluster ${CLUSTER_NAME} \
     --region=${AWS_REGION} \
