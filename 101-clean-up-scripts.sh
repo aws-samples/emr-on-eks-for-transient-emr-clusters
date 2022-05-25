@@ -9,8 +9,12 @@ eksctl delete iamidentitymapping \
 
 kubectl delete -f https://s3.us-west-2.amazonaws.com/amazon-eks/docs/eks-console-full-access.yaml
 
+
 # unInstall karpenter
 helm uninstall --namespace karpenter karpenter
+aws iam delete-role --role-name "${CLUSTER_NAME}-karpenter"
+aws cloudformation delete-stack --stack-name "Karpenter-${CLUSTER_NAME}"
+
 
 # Clean up S3 Folder for Demo JObs Templates.
 export DEMO_JOBS_PATH=s3://${CLUSTER_NAME}-demojobs-${AWS_ACCOUNT_ID}-${AWS_REGION}
