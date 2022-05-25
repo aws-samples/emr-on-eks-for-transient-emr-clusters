@@ -1,7 +1,4 @@
 
-export CLUSTER_NAME="eks-emr-cluster"
-export AWS_ACCOUNT_ID="$(aws sts get-caller-identity --query Account --output text)"
-export AWS_REGION="us-east-2" 
 
 
 export MY_EKSCONSOLE_ROLE=testAcc2Admin
@@ -100,15 +97,20 @@ kubectl delete namespace adhoc-ml-batch
 # Detaching CloudWatchAgentServerPolicy from 
 STACK_NAME=$(eksctl get nodegroup --cluster ${CLUSTER_NAME} -o json | jq -r '.[].StackName')
 ROLE_NAME=$(aws cloudformation describe-stack-resources --stack-name $STACK_NAME | jq -r '.StackResources[] | select(.ResourceType=="AWS::IAM::Role") | .PhysicalResourceId')
-echo "export ROLE_NAME=${ROLE_NAME}" | tee -a ~/.bash_profile
+aws iam detach-role-policy --role-name ${ROLE_NAME} --policy-arn arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy
 
 # Deleting Instance Role 
-STACK_NAME=$(eksctl get nodegroup --cluster ${CLUSTER_NAME} -o json | jq -r '.[].StackName')
-ROLE_NAME=$(aws cloudformation describe-stack-resources --stack-name $STACK_NAME | jq -r '.StackResources[] | select(.ResourceType=="AWS::IAM::Role") | .PhysicalResourceId')
+INSTANCE_PROFILE=$(aws iam list-instance-profiles-for-role --role-name $ROLE_NAME | jq -r '.InstanceProfiles[].InstanceProfileName')
 
-aws iam delete-role-policy --role-name ${ROLE_NAME} --policy-name CloudWatchAgentServerPolicy
+aws iam remove-role-from-instance-profile --instance-profile-name $INSTANCE_PROFILE --role-name $ROLE_NAME
+aws iam delete-instance-profile --instance-profile-name $INSTANCE_PROFILE
+
 aws iam delete-role --role-name ${ROLE_NAME}
 
 
 #Deleting the Cluster
 eksctl delete cluster --name=${CLUSTER_NAME}
+
+
+
+

@@ -1,4 +1,7 @@
 
+export AZS=($(aws ec2 describe-availability-zones --query 'AvailabilityZones[].ZoneName' --output text --region $AWS_REGION))
+echo "export AZS=(${AZS[@]})" 
+
 eksctl create cluster -f - << EOF
 ---
 apiVersion: eksctl.io/v1alpha5
@@ -9,6 +12,7 @@ metadata:
   version: "1.22"
   tags:
     karpenter.sh/discovery: ${CLUSTER_NAME}
+availabilityZones: ["${AZS[0]}", "${AZS[1]}"]
 managedNodeGroups:
   - instanceType: m5.2xlarge
     amiFamily: AmazonLinux2

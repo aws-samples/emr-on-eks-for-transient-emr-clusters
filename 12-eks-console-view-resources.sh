@@ -2,7 +2,6 @@
 # Create a Kubernetes rolebinding or clusterrolebinding that is bound to a Kubernetes role or clusterrole that has the necessary permissions to view the Kubernetes resources.
 kubectl apply -f https://s3.us-west-2.amazonaws.com/amazon-eks/docs/eks-console-full-access.yaml
 
-export MY_EKSCONSOLE_ROLE=testAcc2Admin
 eksctl create iamidentitymapping \
     --cluster ${CLUSTER_NAME} \
     --region=${AWS_REGION} \
