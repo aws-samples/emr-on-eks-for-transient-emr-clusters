@@ -1,0 +1,33 @@
+{
+    "name": "pi-4",
+    "virtualClusterId": "dnvk1iv2c04s1vdm7lk4v9b71",
+    "executionRoleArn": "arn:aws:iam::145454557612:role/monthly-batch-JobExecutionRole",
+    "releaseLabel": "emr-6.3.0-latest",
+    "jobDriver": {
+        "sparkSubmitJobDriver": {
+            "entryPoint": "local:///usr/lib/spark/examples/src/main/python/pi.py",
+            "sparkSubmitParameters": " --conf spark.executor.instances=2 --conf spark.executor.memory=2G --conf spark.executor.cores=1 --conf spark.driver.cores=1"
+        }
+    },
+    "configurationOverrides": {
+        "applicationConfiguration": [
+            {
+                "classification": "spark-defaults",
+                "properties": {
+                  "spark.dynamicAllocation.enabled": "false",
+                  "spark.kubernetes.executor.deleteOnTermination": "true"
+                }
+            }
+        ],
+        "monitoringConfiguration": {
+            "cloudWatchMonitoringConfiguration": {
+                "logGroupName": "/emr-on-eks/eks-emr-cluster/monthly-batch",
+                "logStreamNamePrefix": "pi"
+            }, 
+            "s3MonitoringConfiguration": { 
+            "logUri": "s3://monthly-batch-logs-145454557612-us-east-2/" 
+            }
+
+        }
+    }
+}
