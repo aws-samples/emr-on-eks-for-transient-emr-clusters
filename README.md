@@ -67,7 +67,7 @@ sh 2-virtual-cluster-creation.sh
 
 By this time, you should be able to verify the virtual cluster created in EMR by logging to your AWS Account and navigating to EMR service page.
 
- 
+   ![](images/6-virtual-cluster.png)
 
 
 
@@ -90,8 +90,9 @@ sh 4-logs-location-s3-and-cloudwatch.sh
  
 
 CloudWatch log groups	 
-
+   ![](images/8.1-cloudwatch-log-groups.png)
 S3 buckets
+   ![](images/8.2-s3-logs.png)
 
 ### Step 9: Submit a spark Job
 
