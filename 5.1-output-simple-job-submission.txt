@@ -1,0 +1,8 @@
+bash-3.2$ sh 5-simple-job-submission.sh
+{
+    "id": "0000000306pd7cjc3s5",
+    "name": "pi-4",
+    "arn": "arn:aws:emr-containers:us-east-2:145454557612:/virtualclusters/9vxtlfojy63p806dmsptnx041/jobruns/0000000306pd7cjc3s5",
+    "virtualClusterId": "9vxtlfojy63p806dmsptnx041"
+}
+bash-3.2$ 

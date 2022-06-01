@@ -1,0 +1,6 @@
+bash-3.2$ eksctl get cluster
+2022-05-18 18:33:41 [ℹ]  eksctl version 0.96.0
+2022-05-18 18:33:41 [ℹ]  using region us-east-2
+NAME		REGION		EKSCTL CREATED
+eks-emr-cluster	us-east-2	True
+bash-3.2$ 

@@ -1,0 +1,6 @@
+bash-3.2$ sh 7-pod-priority-classes.sh 
+priorityclass.scheduling.k8s.io/critical-priority created
+priorityclass.scheduling.k8s.io/realtime-priority created
+priorityclass.scheduling.k8s.io/high-priority created
+priorityclass.scheduling.k8s.io/low-priority created
+bash-3.2$ 

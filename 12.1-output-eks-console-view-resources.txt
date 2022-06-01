@@ -1,0 +1,7 @@
+bash-3.2$ sh 12-eks-console-view-resources.sh
+clusterrole.rbac.authorization.k8s.io/eks-console-dashboard-full-access-clusterrole created
+clusterrolebinding.rbac.authorization.k8s.io/eks-console-dashboard-full-access-binding created
+2022-05-19 00:21:09 [ℹ]  eksctl version 0.96.0
+2022-05-19 00:21:09 [ℹ]  using region us-east-2
+2022-05-19 00:21:09 [ℹ]  adding identity "arn:aws:iam::145454557612:role/testAcc2Admin" to auth ConfigMap
+bash-3.2$ 
