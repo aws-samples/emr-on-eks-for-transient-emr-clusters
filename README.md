@@ -113,12 +113,12 @@ sh 5-simple-job-submission.sh
 
 The EMR job status can be verified at EMR console by navigating to virtual cluster “monthly-batch”.
 
- ![](images/10-job-submission)
+ ![](images/10-job-submission.png)
 
 Behind the scene at EKS will create one job which orchestrates a set pods like Controller, driver and executors. You can see the pod lifecycle during the job execution.
 
 
-  ![](images/10-eks-job-pods)
+  ![](images/10-eks-job-pods.png)
 
 
 ### Step 11: Verify the logs.
@@ -127,21 +127,19 @@ The logs can be verifying by 3 different ways. Spark history server on EMR, Clou
 
 1.	Spark history server (real time monitoring) - Navigate to virtual cluster “monthly-batch” and Click on the “view logs” of the job submitted. And drill down all the way to task level.
 
- 
+   ![](images/10-eks-job-pods.png)
 
 2.	CloudWatch Logs (Logs based metric and event automation)
 
- 
-
- 
+   ![](images/11-1-cw-logs.png)
+   ![](images/11-cw-logs.png)
 
 3.	And S3 (For long term retention)
 
 The logs will be saved with job ID and you can drill down all the way stderr & stdout.
 
-
+  ![](images/11-3-s3-logs.png)
  
-
  
 
 ### Step 12: Cluster Monitoring with CloudWatch Container Insights.
