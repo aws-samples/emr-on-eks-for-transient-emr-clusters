@@ -240,7 +240,7 @@ sh 12-eks-console-view-resources.sh
 
 Navigate to EKS cluster and click on the “resources” tab, where you will see all resources including workloads and native resources. Expand the “Cluster” and clock on nodes. At this point we have one node of type m5.2xlarge. 
 
-    ![](images/20-eks-cluster-view.png)
+![](images/20-eks-cluster-view.png)
 
 ### Step 21: Autoscaling in Action by Karpenter.
 
@@ -254,7 +254,7 @@ sh 10-intra-day-high-priority-time-sensitive-job.sh
 
 After submitting the job, you could see the karpenter requesting for additional capacity. 
 
-    ![](images/21-karpenter-logs1.png)
+![](images/21-karpenter-logs1.png)
  
 
 Finally, you could see an expanded cluster. And please note the instance types can be different from what we had initially. Karpenter identify the required capacity and provision appropriate node types by directly working with ec2 fleet APIs. In our example the additional capacity being provided by spot instances which provides additional cost savings.
