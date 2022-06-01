@@ -87,11 +87,13 @@ EMR on EKS natively support logging options with S3 and CloudWatch. In this step
 ```console
 sh 4-logs-location-s3-and-cloudwatch.sh
 ```
- 
 
 CloudWatch log groups	 
+
    ![](images/8.1-cloudwatch-log-groups.png)
+
 S3 buckets
+
    ![](images/8.2-s3-logs.png)
 
 ### Step 9: Submit a spark Job
@@ -111,12 +113,12 @@ sh 5-simple-job-submission.sh
 
 The EMR job status can be verified at EMR console by navigating to virtual cluster “monthly-batch”.
 
- 
+ ![](images/10-job-submission)
 
 Behind the scene at EKS will create one job which orchestrates a set pods like Controller, driver and executors. You can see the pod lifecycle during the job execution.
 
 
- 
+  ![](images/10-eks-job-pods)
 
 
 ### Step 11: Verify the logs.
