@@ -53,7 +53,7 @@ sh 1-eks-cluster-creation-script.sh
 Please note that EKS cluster creation will take 10-15 minutes. 
 Log in to the AWS Console, open EKS Service, and select the clusters link. You should see the EKS cluster in Active state as shown in the following image. 
 
-  ![](images/13-container-insights.png)
+![](images/13-container-insights.png)
 
 ### Step 5: Create the Namespaces and EMR Virtual Clusters
 
@@ -67,7 +67,7 @@ sh 2-virtual-cluster-creation.sh
 
 By this time, you should be able to verify the virtual cluster created in EMR by logging to your AWS Account and navigating to EMR service page.
 
-   ![](images/6-virtual-cluster.png)
+![](images/6-virtual-cluster.png)
 
 
 
@@ -90,11 +90,11 @@ sh 4-logs-location-s3-and-cloudwatch.sh
 
 CloudWatch log groups	 
 
-   ![](images/8.1-cloudwatch-log-groups.png)
+![](images/8.1-cloudwatch-log-groups.png)
 
 S3 buckets
 
-   ![](images/8.2-s3-logs.png)
+![](images/8.2-s3-logs.png)
 
 ### Step 9: Submit a spark Job
 
@@ -113,12 +113,11 @@ sh 5-simple-job-submission.sh
 
 The EMR job status can be verified at EMR console by navigating to virtual cluster “monthly-batch”.
 
- ![](images/10-job-submission.png)
+![](images/10-job-submission.png)
 
 Behind the scene at EKS will create one job which orchestrates a set pods like Controller, driver and executors. You can see the pod lifecycle during the job execution.
 
-
-  ![](images/10-eks-job-pods.png)
+![](images/10-eks-job-pods.png)
 
 
 ### Step 11: Verify the logs.
@@ -127,18 +126,18 @@ The logs can be verifying by 3 different ways. Spark history server on EMR, Clou
 
 1.	Spark history server (real time monitoring) - Navigate to virtual cluster “monthly-batch” and Click on the “view logs” of the job submitted. And drill down all the way to task level.
 
-   ![](images/11-history-server-logs.png)
+![](images/11-history-server-logs.png)
 
 2.	CloudWatch Logs (Logs based metric and event automation)
 
-   ![](images/11-1-cw-logs.png)
-   ![](images/11-cw-logs.png)
+![](images/11-1-cw-logs.png)
+![](images/11-cw-logs.png)
 
 3.	And S3 (For long term retention)
 
 The logs will be saved with job ID and you can drill down all the way stderr & stdout.
 
-  ![](images/11-3-s3-logs.png)
+![](images/11-3-s3-logs.png)
  
  
 
@@ -169,7 +168,7 @@ sh 7-pod-priority-classes.sh
 kubectl get PriorityClass
 ```
 
-  ![](images/14-priority-classes.png)
+![](images/14-priority-classes.png)
 
 
 ### Step 15: Pod Templates.
@@ -207,13 +206,13 @@ Let’s look at what happened our jobs.
 
 The top image is for the first job submitted, the low priority monthly batch job and the bottom one is intraday high priority job. Both job has 2 executors. As you could see the low priority job’s executor #2 got removed due resource constraint immediately after the submission of intraday job. And the executor added back as executor #3 once the intraday job got finished. 
 
-   ![](images/17-priority-jobs-view.png)
+![](images/17-priority-jobs-view.png)
 
 
 
 Navigate to Container insight and performance monitoring. And then select “EKS Nodes” on below select box. You could see the “Reserved CPU” reached its threshold. Which triggered the low priority job evictions.
 
-   ![](images/17-stressed-cluster.png)
+![](images/17-stressed-cluster.png)
 
 
 ### Step 18: Autoscaling with Karpenter - setup.
@@ -259,16 +258,16 @@ After submitting the job, you could see the karpenter requesting for additional 
 
 Finally, you could see an expanded cluster. And please note the instance types can be different from what we had initially. Karpenter identify the required capacity and provision appropriate node types by directly working with ec2 fleet APIs. In our example the additional capacity being provided by spot instances which provides additional cost savings.
 
-    ![](images/21-eks-cluster-view.png)
+![](images/21-eks-cluster-view.png)
 
 Notice the time of the parameter “ttlSecondsAfterEmpty=30” as part of carpenter provisioner. This means once the load on the server become empty. It will terminate within 30 Seconds. 
 
-     ![](images/21-karpenter-logs2.png)
+![](images/21-karpenter-logs2.png)
 
 
 The cluster scaled down and back its original state.
 
-     ![](images/21-2-eks-cluster-view.png)
+![](images/21-2-eks-cluster-view.png)
 
 
 ### Step 22: Clean up
