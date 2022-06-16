@@ -67,14 +67,7 @@ sh 2-virtual-cluster-creation.sh
 
 By this time, you should be able to verify the virtual cluster created in in EMR  by navigating to the “Virtual clusters” at (EMR console)[https://console.aws.amazon.com/elasticmapreduce/home].
 
-<<<<<<< HEAD
- 
-  ![](images/6-virtual-cluster.png)
-=======
 ![](images/6-virtual-cluster.png)
-
->>>>>>> acf6fc5794b1fd870be953fc975f01d284e4981e
-
 
 ### Step 7: Create job execution roles and permissions.
 
