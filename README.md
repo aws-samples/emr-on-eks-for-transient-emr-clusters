@@ -51,11 +51,11 @@ sh 1-eks-cluster-creation-script.sh
 ### Step 4: Verify the EKS Cluster
 
 Please note that EKS cluster creation will take 10-15 minutes. 
-Log in to the AWS Console, open EKS Service, and select the clusters link. You should see the EKS cluster in Active state as shown in the following image. 
+Go to the (EKS console)[https://console.aws.amazon.com/eks/home] and EKS Service, and select the clusters link. You should see the EKS cluster in Active state as shown in the following image. 
 
 ![](images/13-container-insights.png)
 
-### Step 5: Create the Namespaces and EMR Virtual Clusters
+### Step 5: Create EMR Virtual Clusters
 
 In this step we are creating namespaces for each virtual cluster to provide the complete isolation (both resource consumption and visibility) in EKS level.  Then we create the virtual cluster for each job category. Additionally, we also provide service level access to EMR for using the EKS resources on each namespace.
 
@@ -65,7 +65,7 @@ sh 2-virtual-cluster-creation.sh
 ```
 ### Step 6: Verify the EMR Virtual Clusters
 
-By this time, you should be able to verify the virtual cluster created in EMR by logging to your AWS Account and navigating to EMR service page.
+By this time, you should be able to verify the virtual cluster created in in EMR  by navigating to the “Virtual clusters” at (EMR console)[https://console.aws.amazon.com/elasticmapreduce/home].
 
 ![](images/6-virtual-cluster.png)
 
@@ -81,7 +81,7 @@ sh 3-iam-roles-and-permissions.sh
 ```
 ### Step 8: Logging setup (CloudWatch and S3)
 
-EMR on EKS natively support logging options with S3 and CloudWatch. In this step we are going to setup CloudWatch log group and also an S3 bucket for each virtual cluster.
+EMR on EKS natively support logging options with S3 (For Long term log retension)  and CloudWatch (for shorterm analysis and event triggers). In this step we are going to setup CloudWatch log group and also an S3 bucket for each virtual cluster.
 
 
 ```console
@@ -98,10 +98,10 @@ S3 buckets
 
 ### Step 9: Submit a spark Job
 
-While submitting an EMR job, EMR on EKS will convert those to EKS specific component like Jobs and Pods. A single EMR job submission translates to 3 EKS components under the hood.
-•	A controller job which creates a controller pod. (Same as spark job)
-•	A driver pod. (Same as spark driver)
-•	And a set of executor pods. (Same as spark executor)
+While submitting an EMR Saprk job, EMR on EKS will convert those to EKS specific component like Jobs and Pods. An EMR job translates to 3 EKS components under the hood.
+- A controller job which creates a job runner pod - Equivalent to spark job
+- A driver pod - Equivalent to spark driver
+- And a set of executor pods - Equivalent to spark executors
 
 In the following example we are submitting a sample spark job to virtual cluster “monthly-batch-emr-cluster”.
 
@@ -124,7 +124,7 @@ Behind the scene at EKS will create one job which orchestrates a set pods like C
 
 The logs can be verifying by 3 different ways. Spark history server on EMR, CloudWatch and S3.
 
-1.	Spark history server (real time monitoring) - Navigate to virtual cluster “monthly-batch” and Click on the “view logs” of the job submitted. And drill down all the way to task level.
+1.	Spark history server - Navigate to virtual cluster “monthly-batch” and Click on the “view logs” of the job submitted. And drill down on each task level.
 
 ![](images/11-history-server-logs.png)
 
@@ -134,8 +134,7 @@ The logs can be verifying by 3 different ways. Spark history server on EMR, Clou
 ![](images/11-cw-logs.png)
 
 3.	And S3 (For long term retention)
-
-The logs will be saved with job ID and you can drill down all the way stderr & stdout.
+Navigate to bucket named - monthly-batch-logs-[YOUR ACCOUNT ID]-[YOUR AWS REGION]. The logs will be saved with job ID and you can drill down all the way stderr & stdout.
 
 ![](images/11-3-s3-logs.png)
  
@@ -143,9 +142,9 @@ The logs will be saved with job ID and you can drill down all the way stderr & s
 
 ### Step 12: Cluster Monitoring with CloudWatch Container Insights.
 
-You can use CloudWatch Container Insights to collect, aggregate, and summarize metrics and logs from your containerized applications. In this step we are setting up CloudWatch agents on each node as daemons sets and provide necessary permissions. We are installing 2 applications as part of this with the help of [Helm](https://helm.sh/) (A Kubernetes application manager).
-•	Deploy CloudWatch-Agent (responsible for sending the metrics to CloudWatch) as a Daemon Set.
-•	Deploy fluentd (responsible for sending the logs to CloudWatch) as a Daemon Set.
+In this step we are setting up CloudWatch agents on each node as daemons sets and provide necessary permissions. We are installing 2 applications as part of this with the help of [Helm](https://helm.sh/) (A Kubernetes application manager).
+•	Deploy CloudWatch-Agent - (sending the metrics to CloudWatch) as a Daemon Set.
+•	Deploy fluentd - (sending the logs to CloudWatch) as a Daemon Set.
 
 
 ```console
