@@ -67,8 +67,13 @@ sh 2-virtual-cluster-creation.sh
 
 By this time, you should be able to verify the virtual cluster created in in EMR  by navigating to the “Virtual clusters” at (EMR console)[https://console.aws.amazon.com/elasticmapreduce/home].
 
+<<<<<<< HEAD
+ 
+  ![](images/6-virtual-cluster.png)
+=======
 ![](images/6-virtual-cluster.png)
 
+>>>>>>> acf6fc5794b1fd870be953fc975f01d284e4981e
 
 
 ### Step 7: Create job execution roles and permissions.
@@ -83,6 +88,13 @@ sh 3-iam-roles-and-permissions.sh
 
 EMR on EKS natively support logging options with S3 (For Long term log retension)  and CloudWatch (for shorterm analysis and event triggers). In this step we are going to setup CloudWatch log group and also an S3 bucket for each virtual cluster.
 
+CloudWatch Log Groups
+
+  ![](images/8.1-cloudwatch-log-groups.png)
+
+S3 Logs 
+
+  ![](images/8.2-s3-logs.png)
 
 ```console
 sh 4-logs-location-s3-and-cloudwatch.sh
