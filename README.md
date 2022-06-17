@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Prerequisites
 Before you build the entire infrastructure, you must meet the following prerequisites.
 *	An AWS Account with valid AWS credentials
@@ -310,5 +309,4 @@ See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more inform
 ## License
 
 This project is licensed under the Apache-2.0 License.
->>>>>>> 1730b6b0b8d896f03d45724eaafe22cc5de67f45
 
