@@ -1,4 +1,4 @@
-## EMR on EKS for Transient EMR Cluster
+## EMR on EKS for Transient EMR Clusters
 
 # Prerequisites
 Before you build the entire infrastructure, you must meet the following prerequisites.
