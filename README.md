@@ -1,3 +1,5 @@
+## EMR on EKS for Transient EMR Cluster
+
 # Prerequisites
 Before you build the entire infrastructure, you must meet the following prerequisites.
 *	An AWS Account with valid AWS credentials
@@ -283,24 +285,6 @@ Finally let’s cleanup to avoid unwanted cost of provisioned resources.
 sh 101-cleanup-script.sh
 ```
 
-
-
-
-
-
-
-
-
-
-=======
-## My Project
-
-TODO: Fill this README out!
-
-Be sure to:
-
-* Change the title in this README
-* Edit your repository description on GitHub
 
 ## Security
 
