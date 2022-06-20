@@ -1,5 +1,12 @@
 ## EMR on EKS for Transient EMR Clusters
 
+![](images/0-current-state-acrhitecture.png)
+Diagram 1.1 – Current batch design with EMR on Ec2 transient cluster
+
+
+![](images/0-future-state-acrhitecture.png)
+Diagram 1.2 – proposed batch design with EMR on EKS.
+
 # Prerequisites
 Before you build the entire infrastructure, you must meet the following prerequisites.
 *	An AWS Account with valid AWS credentials
