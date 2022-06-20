@@ -4,7 +4,7 @@
 Diagram 1.1 – Current batch design with EMR on Ec2 transient cluster
 
 
-![](images/0-future-state-acrhitecture.png)
+![](images/0-future-state-architecture.png)
 Diagram 1.2 – proposed batch design with EMR on EKS.
 
 # Prerequisites
